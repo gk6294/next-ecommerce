@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const ProductList = () => {
+const NewProductList = () => {
   return (
     <div className="flex gap-8 gap-y-16 justify-between flex-wrap">
       <Link
@@ -30,4 +30,4 @@ const ProductList = () => {
     </div>
   );
 };
-export default ProductList;
+export default NewProductList;
