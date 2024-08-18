@@ -3,30 +3,111 @@ import Image from "next/image";
 
 const CategoryList = () => {
   return (
-    <div className="flex gap-8 gap-y-16 justify-between flex-wrap">
-      <Link
-        href="/star.png"
-        className="w-full flex flex-col gap-4 sm:w-[45%] lg:w-[22%]"
-      >
-        <div className="relative w-full h-80">
-          <Image
-            src="/visa.png"
-            alt=""
-            fill
-            sizes="25vw"
-            className="absolute object-cover rounded-md z-10 hover:opacity-0 transition-opacity easy duration-500"
-          ></Image>
-          <Image src="/youtube.png" alt="" fill sizes="25vw"></Image>
-        </div>
-        <div className="flex justify-between">
-          <span className="font-medium">Product Name</span>
-          <span className="font-semibold">$49</span>
-        </div>
-        <div className="text-sm text-gray-500">My Description</div>
-        <button className="rounded-2xl ring-1 ring-lama text-lama w-max py-2 px-4 text-xs hover:bg-lama hover:text-white">
-          View Cart
-        </button>
-      </Link>
+    <div className="px-4 overflow-x-scroll scrollbar-hide">
+      <div className="flex gap-4 md:gap-8">
+        <Link
+          href="/list?cat=test"
+          className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 xl:w-1/6"
+        >
+          <div className="relative bg-slate-100 w-full h-96">
+            <Image
+              src="/woman.png"
+              alt=""
+              fill
+              sizes="20vw"
+              className="object-cover"
+            />
+          </div>
+          <h1 className="mt-8 font-light text-cl tracking-wide">
+            Category Name
+          </h1>
+        </Link>
+        <Link
+          href="/list?cat=test"
+          className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 xl:w-1/6"
+        >
+          <div className="relative bg-slate-100 w-full h-96">
+            <Image
+              src="/woman.png"
+              alt=""
+              fill
+              sizes="20vw"
+              className="object-cover"
+            />
+          </div>
+          <h1 className="mt-8 font-light text-cl tracking-wide">
+            Category Name
+          </h1>
+        </Link>
+        <Link
+          href="/list?cat=test"
+          className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 xl:w-1/6"
+        >
+          <div className="relative bg-slate-100 w-full h-96">
+            <Image
+              src="/woman.png"
+              alt=""
+              fill
+              sizes="20vw"
+              className="object-cover"
+            />
+          </div>
+          <h1 className="mt-8 font-light text-cl tracking-wide">
+            Category Name
+          </h1>
+        </Link>
+        <Link
+          href="/list?cat=test"
+          className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 xl:w-1/6"
+        >
+          <div className="relative bg-slate-100 w-full h-96">
+            <Image
+              src="/woman.png"
+              alt=""
+              fill
+              sizes="20vw"
+              className="object-cover"
+            />
+          </div>
+          <h1 className="mt-8 font-light text-cl tracking-wide">
+            Category Name
+          </h1>
+        </Link>
+        <Link
+          href="/list?cat=test"
+          className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 xl:w-1/6"
+        >
+          <div className="relative bg-slate-100 w-full h-96">
+            <Image
+              src="/woman.png"
+              alt=""
+              fill
+              sizes="20vw"
+              className="object-cover"
+            />
+          </div>
+          <h1 className="mt-8 font-light text-cl tracking-wide">
+            Category Name
+          </h1>
+        </Link>
+        <Link
+          href="/list?cat=test"
+          className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 xl:w-1/6"
+        >
+          <div className="relative bg-slate-100 w-full h-96">
+            <Image
+              src="/woman.png"
+              alt=""
+              fill
+              sizes="20vw"
+              className="object-cover"
+            />
+          </div>
+          <h1 className="mt-8 font-light text-cl tracking-wide">
+            Category Name
+          </h1>
+        </Link>
+      </div>
     </div>
   );
 };
