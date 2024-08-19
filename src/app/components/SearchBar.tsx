@@ -19,6 +19,7 @@ const SearchBar = () => {
       onSubmit={handleSearch}
     >
       <input
+        autoComplete="off"
         type="text"
         name="name"
         placeholder="Search"

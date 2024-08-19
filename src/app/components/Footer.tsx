@@ -66,6 +66,7 @@ const Footer = () => {
           </p>
           <div className="flex">
             <input
+              id="abc"
               type="text"
               placeholder="Email Address"
               className="p-4 w-3/4"

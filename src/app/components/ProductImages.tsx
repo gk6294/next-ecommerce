@@ -4,9 +4,9 @@ import Image from "next/image";
 import { useState } from "react";
 
 const images = [
-  { id: 1, url: "/woman.png" },
-  { id: 1, url: "/skrill.png" },
-  { id: 1, url: "/youtube.png" },
+  { id: 1000, url: "/woman.png" },
+  { id: 2000, url: "/skrill.png" },
+  { id: 3000, url: "/youtube.png" },
 ];
 
 const ProductImages = () => {
@@ -23,7 +23,7 @@ const ProductImages = () => {
         />
       </div>
       {images.map((img, i) => (
-        <div className="w-1/4 h-32 relative gap-4 mt-8 cursor-pointer" key="id">
+        <div className="w-1/4 h-32 relative gap-4 mt-8 cursor-pointer" key={img.id}>
           <Image
             src={img.url}
             alt=""
