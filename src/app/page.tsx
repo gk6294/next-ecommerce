@@ -1,15 +1,15 @@
 "use client";
 
-import { WixClientContext } from "@/context/wixContext";
 import CategoryList from "./components/CategoryList";
 import NewProductList from "./components/NewProductList";
 import ProductList from "./components/ProductList";
 import Slider from "./components/Slider";
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
 console.log("HomePage component is being executed");
+import { useWixClient} from "@/hooks/useWixClient"
 
 const HomePage = () => {
-  const wixClient = useContext(WixClientContext);
+  const wixClient = useWixClient();
   useEffect(() => {
     console.log("Effect running");
     const getProducts = async () => {
@@ -24,9 +24,6 @@ const HomePage = () => {
     getProducts();
   }, [wixClient]);
   
-  console.log("Component rendered");
-
-
   // useEffect(() => {
   //   const getProducts = async () => {
   //     const res = await wixClient.products.queryProducts().find();
