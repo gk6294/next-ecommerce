@@ -1,36 +1,14 @@
-"use client";
-
 import CategoryList from "./components/CategoryList";
 import NewProductList from "./components/NewProductList";
 import ProductList from "./components/ProductList";
 import Slider from "./components/Slider";
-import { useEffect } from "react";
-console.log("HomePage component is being executed");
-import { useWixClient} from "@/hooks/useWixClient"
+import { wixClientServer } from "@/lib/wixClientServer";
 
-const HomePage = () => {
-  const wixClient = useWixClient();
-  useEffect(() => {
-    console.log("Effect running");
-    const getProducts = async () => {
-      console.log("Fetching products");
-      try {
-        const res = await wixClient.products.queryProducts().find();
-        console.log("Products fetched:", res);
-      } catch (error) {
-        console.error("Error fetching products:", error);
-      }
-    };
-    getProducts();
-  }, [wixClient]);
+const HomePage = async() => {
+  const wixClient = await wixClientServer();
+  const res = await wixClient.products.queryProducts().find();
+  console.log(res);
   
-  // useEffect(() => {
-  //   const getProducts = async () => {
-  //     const res = await wixClient.products.queryProducts().find();
-  //     console.log(res);
-  //   };
-  //   getProducts();
-  // },[wixClient]);
   return (
     <div className="">
       <Slider />
