@@ -2,10 +2,12 @@
 
 import { OAuthStrategy, createClient } from "@wix/sdk";
 import { products, collections } from "@wix/stores";
-import Cookies from "js-cookie";
 import { createContext, ReactNode } from "react";
 
-const refreshToken = JSON.parse(Cookies.get("refreshToken") || "{}");
+console.log("WixClientContext is being created");
+
+const refreshToken = process.env.NEXT_PUBLIC_WIX_REFRESH_TOKEN || "";
+console.log("Refresh token:", refreshToken);
 
 const wixClient = createClient({
   modules: {

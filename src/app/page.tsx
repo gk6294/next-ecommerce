@@ -6,17 +6,34 @@ import NewProductList from "./components/NewProductList";
 import ProductList from "./components/ProductList";
 import Slider from "./components/Slider";
 import { useContext, useEffect } from "react";
+console.log("HomePage component is being executed");
 
 const HomePage = () => {
   const wixClient = useContext(WixClientContext);
-  
   useEffect(() => {
+    console.log("Effect running");
     const getProducts = async () => {
-      const res = await wixClient.products.queryProducts().find();
-      console.log(res);
+      console.log("Fetching products");
+      try {
+        const res = await wixClient.products.queryProducts().find();
+        console.log("Products fetched:", res);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
     };
     getProducts();
-  },[wixClient]);
+  }, [wixClient]);
+  
+  console.log("Component rendered");
+
+
+  // useEffect(() => {
+  //   const getProducts = async () => {
+  //     const res = await wixClient.products.queryProducts().find();
+  //     console.log(res);
+  //   };
+  //   getProducts();
+  // },[wixClient]);
   return (
     <div className="">
       <Slider />
