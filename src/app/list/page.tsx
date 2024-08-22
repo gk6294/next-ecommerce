@@ -1,9 +1,13 @@
 import Image from "next/image";
 import Filter from "../components/Filter";
-import CategoryList from "../components/CategoryList";
 import ProductList from "../components/ProductList";
+import { wixClientServer } from "@/lib/wixClientServer";
 
-const ListPage = () => {
+const ListPage = async ({ searchParams }: { searchParams: any }) => {
+  const wixClient = await wixClientServer();
+  const res = await wixClient.collections.getCollectionBySlug(
+    searchParams.cat || "all-products"
+  );
   return (
     <div className="px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 relative">
       {/* CAMPAIGN */}
@@ -28,7 +32,12 @@ const ListPage = () => {
       </div>
       <Filter />
       <h1 className="mt-12 text-xl font-semibold">All Products for you!</h1>
-      <ProductList />
+      <ProductList
+        categoryId={
+          res.collection?._id || "00000000-000000-000000-000000000001"
+        }
+        searchParams={""}
+      />
     </div>
   );
 };

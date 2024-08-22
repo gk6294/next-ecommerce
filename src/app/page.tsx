@@ -18,8 +18,10 @@ const HomePage = async () => {
       <div className="mt-24">
         <h1 className="text-2xl mt-24 px-4 md:px-8 lg:px-16 xl:32 2xl:px-64 mb-12">
           Categories
+          <Suspense fallback={"loading"}>
+            <CategoryList />
+          </Suspense>
         </h1>
-        <CategoryList />
       </div>
       <div className="mt-24 px-4 md:px-8 lg:px-16 xl:32 2xl:px-64">
         <h1>New Products</h1>
